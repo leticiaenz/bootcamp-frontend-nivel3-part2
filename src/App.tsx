@@ -1,10 +1,12 @@
 import React from 'react';
 import SignIn from './pages/Signin';
+import SignUp from './pages/SignUp';
 import GlobolStyle from './styles/global';
 
 const App: React.FC = () => (
   <>
-    <SignIn />
+    {/* <SignIn /> */}
+    <SignUp />
     <GlobolStyle />
   </>
 );

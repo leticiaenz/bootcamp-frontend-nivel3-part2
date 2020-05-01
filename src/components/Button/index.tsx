@@ -11,6 +11,3 @@ const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
 );
 
 export default Button;
-
-// ButtomHtmlAtributes -> serve para dizer quais atributos
-// aquela propriedade tem por padrao e incluir as que queremos
