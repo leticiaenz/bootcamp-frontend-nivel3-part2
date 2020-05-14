@@ -1,14 +1,14 @@
-import React, { createContext, useCallback, useState } from 'react';
+import React, { createContext, useCallback, useState, useContext } from 'react';
 import api from '../services/api';
-
-interface AuthState {
-  token: string;
-  user: object;
-}
 
 interface SignInCredencials {
   email: string;
   password: string;
+}
+
+interface AuthState {
+  token: string;
+  user: object;
 }
 
 interface AuthContextData {
@@ -49,4 +49,13 @@ const AuthProvider: React.FC = ({ children }) => {
   );
 };
 
-export { AuthContext, AuthProvider };
+function useAuth(): AuthContextData {
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw new Error('useAuth must be used within an AutProvider');
+  }
+  return context;
+}
+
+export { AuthProvider, useAuth };
